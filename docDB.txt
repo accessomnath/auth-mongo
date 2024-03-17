@@ -1,0 +1,1 @@
+{"_id":{"$oid":"65f670d6635a9ef17367eadb"},"provider":"email","username":"user07096","email":"somnath35646895@email.com","password":"$2a$10$Az0KS/TGke15elMPoXRLNeUbUVRbRf4hnhYElENDytesKUo3Y5Elq","name":"noname","role":"USER","createdAt":{"$date":{"$numberLong":"1710649558194"}},"updatedAt":{"$date":{"$numberLong":"1710649558194"}},"__v":{"$numberInt":"0"}}
