@@ -3,7 +3,7 @@ import { Strategy as FacebookStrategy } from 'passport-facebook';
 
 import User from '../models/User.js';
 
-const serverUrl = process.env.NODE_ENV === 'production' ? process.env.SERVER_URL_PROD : process.env.SERVER_URL_DEV;
+const serverUrl = process.env.SERVER_URL_DEV;
 
 // facebook strategy
 const facebookLogin = new FacebookStrategy(
