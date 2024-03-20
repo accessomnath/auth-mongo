@@ -26,7 +26,7 @@ const passportLogin = new PassportLocalStrategy(
         return done(null, false, { message: 'Email does not exist.' });
       }
 
-      // Compare passwords
+      // Compare passwords using cb
       user.comparePassword(password, function (err, isMatch) {
         if (err) {
           return done(err);
