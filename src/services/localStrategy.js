@@ -12,17 +12,21 @@ const passportLogin = new PassportLocalStrategy(
     passReqToCallback: true,
   },
   async (req, email, password, done) => {
-    const { error } = loginSchema.validate(req.body);
-    if (error) {
-      return done(null, false, { message: error.details[0].message });
-    }
-
     try {
+      // Validate login request body
+      const { error } = loginSchema.validate(req.body); 
+      if (error) {
+        return done(null, false, { message: error.details[0].message });
+      }
+
+      // Find user by email
       const user = await User.findOne({ email: email.trim() });
+
       if (!user) {
         return done(null, false, { message: 'Email does not exist.' });
       }
 
+      // Compare passwords
       user.comparePassword(password, function (err, isMatch) {
         if (err) {
           return done(err);
@@ -38,6 +42,5 @@ const passportLogin = new PassportLocalStrategy(
     }
   },
 );
-
 
 passport.use(passportLogin);
